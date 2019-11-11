@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { HeroesComponent } from './heroes.component';
+import { HeroDetailsComponent } from './hero-details/hero-details.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { HeroesComponent } from './heroes.component';
     HeroesComponent
   ],
   declarations: [
-    HeroesComponent
+    HeroesComponent,
+    HeroDetailsComponent
   ]
 })
 export class HeroesModule { }
