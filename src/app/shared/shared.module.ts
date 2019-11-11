@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { HeroesComponent } from './heroes.component';
 import { HeroDetailsComponent } from './hero-details/hero-details.component';
 
 @NgModule({
@@ -11,11 +10,10 @@ import { HeroDetailsComponent } from './hero-details/hero-details.component';
     FormsModule
   ],
   exports: [
-    HeroesComponent
+    HeroDetailsComponent
   ],
   declarations: [
-    HeroesComponent,
     HeroDetailsComponent
   ]
 })
-export class HeroesModule { }
+export class SharedModule { }

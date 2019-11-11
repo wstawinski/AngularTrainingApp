@@ -5,19 +5,18 @@ import { Hero } from 'src/app/core/models/hero';
 import { HeroService } from 'src/app/core/services/hero.service';
 
 @Component({
-  selector: 'ata-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+  selector: 'ata-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: [ './dashboard.component.scss' ]
 })
-
-export class HeroesComponent implements OnInit {
+export class DashboardComponent implements OnInit {
   heroes: Hero[];
 
   constructor(private heroService: HeroService) {}
 
   getHeroes() {
     this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => this.heroes = heroes.slice(0, 5));
   }
 
   ngOnInit() {
