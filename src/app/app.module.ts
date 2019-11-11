@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HeroModule } from './pages/hero/hero.module';
+import { HeroesModule } from './pages/hero/heroes.module';
 
 import { AppComponent } from './app.component';
 
@@ -10,12 +10,13 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeroModule
+    HeroesModule
   ],
   declarations: [
     AppComponent
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
