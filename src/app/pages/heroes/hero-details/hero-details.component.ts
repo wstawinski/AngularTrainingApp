@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Hero } from 'src/app/core/hero';
+import { Hero } from 'src/app/core/models/hero';
 
 @Component({
   selector: 'ata-hero-details',

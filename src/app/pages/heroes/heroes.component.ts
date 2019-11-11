@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { Hero } from 'src/app/core/hero';
-import { Heroes } from 'src/app/core/heroes';
+import { Hero } from 'src/app/core/models/hero';
+
+import { HeroService } from 'src/app/core/services/hero.service';
 
 @Component({
   selector: 'ata-heroes',
@@ -9,11 +10,22 @@ import { Heroes } from 'src/app/core/heroes';
   styleUrls: ['./heroes.component.scss']
 })
 
-export class HeroesComponent {
-  heroes = Heroes;
+export class HeroesComponent implements OnInit {
+  heroes: Hero[];
   selectedHero: Hero;
+
+  constructor(private heroService: HeroService) {}
+
+  getHeroes() {
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
+  }
 
   onSelect(hero: Hero) {
     this.selectedHero = hero;
+  }
+
+  ngOnInit() {
+    this.getHeroes();
   }
 }
