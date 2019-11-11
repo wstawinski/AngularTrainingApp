@@ -1,19 +1,24 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { Hero } from 'src/app/core/models/hero';
-import { Heroes } from 'src/app/core/models/heroes';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HeroService {
+  private heroesApiUrl = 'http://localhost:3000/heroes';
+
+  constructor(private httpClient: HttpClient) { }
+
   getHeroes(): Observable<Hero[]> {
-    return of(Heroes);
+    return this.httpClient.get<Hero[]>(this.heroesApiUrl);
   }
 
   getHero(id: number): Observable<Hero> {
-    return of(Heroes.find(hero => hero.id === id));
+    const url = `${this.heroesApiUrl}/${id}`;
+    return this.httpClient.get<Hero>(url);
   }
 }
