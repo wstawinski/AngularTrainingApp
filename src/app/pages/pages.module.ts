@@ -16,11 +16,6 @@ import { HeroDetailsComponent } from './hero-details/hero-details.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  exports: [
-    HeroesComponent,
-    DashboardComponent,
-    HeroDetailsComponent
-  ],
   declarations: [
     HeroesComponent,
     DashboardComponent,
